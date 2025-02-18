@@ -5,6 +5,11 @@ public class ReadCSVFile {
     public static void main(String[] args) {
         //Store the file path
         String filePath = "D:\\Training_Capgemini\\Week5\\Day1\\src\\main\\java\\com\\basiccsvproblems\\readcsvfile\\read.csv";
+        readFile(filePath);
+    }
+
+    public static boolean readFile(String filePath) {
+        boolean result = false;
         //Using Try and catch block to handle exception(If any)
         try{
             //Create file and buffer reader to read from a CSV file
@@ -18,9 +23,13 @@ public class ReadCSVFile {
                 System.out.println(columns[0] + ", " + columns[1] + ", " + columns[2] + ", " + columns[3]);
                 line = bufferedReader.readLine();
             }
+
+            result = true;
         }catch (IOException e){
             //Print message
             e.printStackTrace();
         }
+
+        return result;
     }
 }
